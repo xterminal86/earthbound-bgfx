@@ -5,6 +5,7 @@ core.*
 *.txt
 !CMakeLists.txt
 !docs/NOTE.txt
+!bg/*.txt
 *.out
 *.exe
 /*.bmp
