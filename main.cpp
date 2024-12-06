@@ -426,9 +426,6 @@ void ProcessStatic()
 
 void ProcessAnimated()
 {
-  //
-  // With palette cycling.
-  //
   for (uint16_t y = 0; y < kBgHeight; y++)
   {
     size_t iy = y + CurrentBackground->ScrollPosY + (size_t)CurrentBackground->ScanlineOffsetY;
@@ -1181,10 +1178,18 @@ void LoadBackgrounds()
     return;
   }
 
+  //
+  // Because directory_iterator doesn't sort.
+  //
+  std::set<std::string> files;
+
   for (const directory_entry& item : directory_iterator(p))
   {
-    std::string fname = item.path().c_str();
+    files.insert(item.path());
+  }
 
+  for (const std::string& fname : files)
+  {
     auto spl = StringSplit(fname, '.');
 
     if (spl.size() == 1)
