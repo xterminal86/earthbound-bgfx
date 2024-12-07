@@ -3,7 +3,6 @@
 #include <memory>
 #include <chrono>
 #include <set>
-#include <unordered_map>
 #include <random>
 
 #include "instant-font.h"
@@ -1182,10 +1181,10 @@ void LoadBackgrounds()
   // Because directory_iterator doesn't sort.
   //
   std::set<std::string> files;
-
+  
   for (const directory_entry& item : directory_iterator(p))
   {
-    files.insert(item.path());
+    files.insert(item.path().string());
   }
 
   for (const std::string& fname : files)

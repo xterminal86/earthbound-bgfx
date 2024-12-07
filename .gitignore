@@ -1,5 +1,6 @@
 build*/
 obj/
+SDL2/
 CMakeLists.txt.user
 CMakeUserPresets.json
 core.*
@@ -8,6 +9,8 @@ core.*
 !docs/NOTE.txt
 !bg/*.txt
 !conanfile.txt
+!dumb-compile-win.txt
+*.dll
 *.out
 *.exe
 /*.bmp
