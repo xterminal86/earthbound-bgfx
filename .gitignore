@@ -1,11 +1,13 @@
 build*/
 obj/
 CMakeLists.txt.user
+CMakeUserPresets.json
 core.*
 *.txt
 !CMakeLists.txt
 !docs/NOTE.txt
 !bg/*.txt
+!conanfile.txt
 *.out
 *.exe
 /*.bmp
